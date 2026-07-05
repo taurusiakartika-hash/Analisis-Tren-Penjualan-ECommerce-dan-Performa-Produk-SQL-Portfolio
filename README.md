@@ -13,7 +13,7 @@ Proyek ini menggunakan tabel tunggal 'ecomm' yang menyimpat seluruh riwayat tran
 ## 3. Proses Analisi & Metodologi (Pendekatan Query)
 Analisis data dijalankan secara terstruktur melalui beberapa pendekatan query SQL:
 * Analisis tren finansial bulanan: Mengelompokkan data berdasarkan waktu menggunakan 'DATE_TRUNC('month', purchasedate)' serta fungsi 'EXTRACT' untuk memvalidasi total transaksi dan akumulasi 'net revenue' secara kronologis.
-* Monitoring transaki terkini: Menggunakan filter dinamis 'INTERVAL '7 day'' dari tanggal maksimum transaksi di database bersama fungsi waktu sistem ('NOW()', 'CURRENT_TIMESTAMP') untuk memantau produk yang terjual dalam seminggu terakhir.
+* Monitoring transaki terkini: Menggunakan filter dinamis 'INTERVAL 7 day' dari tanggal maksimum transaksi di database bersama fungsi waktu sistem ('NOW()', 'CURRENT_TIMESTAMP') untuk memantau produk yang terjual dalam seminggu terakhir.
 * Analisis performa produk: Menggunakan teknik 'Common Table Expression' (WITH clause) dan 'Subquery' untuk menyaring daftar produk yang memiliki harga maupun kontribusi 'net_revenue' di atas rata-rata industri.
 * Volume penjualan terbanyak: Melakukan agregasi 'SUM(quantitysold)' dengan pengelompokan nama produk untuk memetakan produk terlaris secara kuantitas.
 
